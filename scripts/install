@@ -35,8 +35,10 @@ ynh_add_nginx_config
 
 #yunohost service add $app --description="A short description of the app" --log="/var/log/$app/$app.log"
 
-bash docspace-install.sh -irds false -imysql false -mysqld $db_user -mysqlu $db_name -mysqlp $db_pwd -ep $port
 
+pushd $install_dir
+	bash docspace-install.sh -irds false -imysql false -mysqld $db_user -mysqlu $db_name -mysqlp $db_pwd -ep $port
+popd
 #=================================================
 # APP INITIAL CONFIGURATION
 #=================================================
